@@ -254,3 +254,29 @@ Examples
 SELECT * FROM people WHERE email IS NOT NULL;
 SELECT * FROM addresses WHERE zip_code IS NOT NULL;
 ```
+
+### Querying data in related tables
+
+```
+-- This is how to write a comment in SQL
+SELECT * FROM <table1>, <table2>
+-- Everything else works just like querying one table
+```
+
+Examples:
+
+```
+SELECT * FROM people, loans
+```
+
+To access attributes of a given table use the dot notation.
+
+```
+SELECT * FROM <table1>, <table2> WHERE <table1>.<column> = <table2>.<column>;
+```
+
+Examples:
+
+```
+SELECT * FROM people, loans WHERE people.loans_id = loans.id;
+```
